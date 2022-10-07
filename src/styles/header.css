@@ -1,0 +1,15 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    background-color: black;
+}
+
+.nav{
+    display: flex;
+    align-self: center;
+}
+
+.headerTitle {
+    padding: 0 15px 0 15px;
+}

@@ -1,0 +1,19 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: black;
+    width: fit-content;
+    padding-top: 170px;
+    align-items: center;
+}
+
+.logoSidebar {
+    width: 64px;
+    height: 64px;
+    padding: 15px 0 15px 0;
+}
+
+.copyright {
+    
+}
