@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 
+
 export default function AccueilCompo() {
 
   const [post, setPost] = useState(null);
@@ -17,10 +18,10 @@ export default function AccueilCompo() {
 
     return (
       <div>
-        <p>{post.keyData.calorieCount}cal</p>
-        <p>{post.keyData.proteinCount}prot</p>
-        <p>{post.keyData.carbohydrateCount}carbon</p>
-        <p>{post.keyData.lipidCount}lipid</p>
+        <p>{post.keyData.calorieCount}calories</p>
+        <p>{post.keyData.proteinCount}proteines</p>
+        <p>{post.keyData.carbohydrateCount}glucides</p>
+        <p>{post.keyData.lipidCount}lipides</p>
       </div>
     );
   }
