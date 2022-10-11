@@ -1,8 +1,9 @@
 import Header from "../components/Header"
 import Sidebar from "../components/Sidebar";
 import AccueilCompo from "../components/Accueil"
-import Sessions from "../components/Sessions"
+import Depenses from "../components/Depenses"
 import Statistiques from "../components/Statistiques"
+import Session from "../components/Session"
 import "../styles/accueil.css"
 
 export default function Accueil() {
@@ -11,8 +12,9 @@ export default function Accueil() {
       <Header />
       <Sidebar />
       <AccueilCompo />
-      <Sessions />
+      <Depenses />
       <Statistiques />
+      <Session />
     </div>
   );
 }

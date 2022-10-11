@@ -19,13 +19,13 @@ export default function Statistiques() {
     useEffect(() => {
       axios.get('http://localhost:3000/user/18/activity ').then((response) => {
         setPost(response.data.data.sessions);
-        console.log(response.data.data.sessions)
+        
       });
     }, []);
 
   return (
     <BarChart
-      width={500}
+      width={700}
       height={300}
       data={post}
       margin={{
@@ -40,8 +40,8 @@ export default function Statistiques() {
       <YAxis />
       <Tooltip />
       <Legend />
-      <Bar dataKey="kilogram" fill="#8884d8" />
-      <Bar dataKey="calories" fill="#82ca9d" />
+      <Bar dataKey="kilogram" fill="black" />
+      <Bar dataKey="calories" fill="red" />
     </BarChart>
   );
 }

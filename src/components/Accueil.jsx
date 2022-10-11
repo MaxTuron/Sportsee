@@ -8,7 +8,6 @@ export default function AccueilCompo() {
   useEffect(() => {
     axios.get('http://localhost:3000/user/12').then((response) => {
       setPost(response.data.data);
-      console.log(response.data.data.id)
     });
   }, []);
 
