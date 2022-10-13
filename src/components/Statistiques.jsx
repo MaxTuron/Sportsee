@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import axios from "axios";
+import  {getStatistiques}  from "../utils/fetchData"
 import {
   BarChart,
   Bar,
@@ -14,15 +14,21 @@ import {
 
 export default function Statistiques() {
 
-    const [post, setPost] = useState(null);
+  const [post, setPost] = useState(null);
 
-    useEffect(() => {
-      axios.get('http://localhost:3000/user/18/activity ').then((response) => {
-        setPost(response.data.data.sessions);
-        
-      });
-    }, []);
+  async function afficheData () {
+    try{
+      const userResponse = await getStatistiques();
+      console.log(userResponse.data.data.sessions)
+      setPost(userResponse.data.data.sessions);
+    } catch(err) {
+      console.log(err)
+    }
+  }
 
+  useEffect(() => {
+   afficheData()
+  }, [])
   return (
     <BarChart
       width={700}

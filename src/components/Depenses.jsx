@@ -1,27 +1,35 @@
-import React, {useState, useEffect} from "react";
-import axios from "axios";
-
+import React, {useEffect, useState} from "react";
+import  {getUser}  from "../utils/fetchData"
 
 export default function Depenses() {
 
-  const [post, setPost] = useState(null);
+  const [calorie, setCalorie] = useState(null);
+  const [protein, setProtein] = useState(null);
+  const [glucides, setGlucides] = useState(null);
+  const [lipides, setLipides] = useState(null);
+
+  async function afficheData () {
+    try{
+      const userResponse = await getUser();
+      setCalorie(userResponse.data.data.keyData.calorieCount);
+      setProtein(userResponse.data.data.keyData.proteinCount);
+      setGlucides(userResponse.data.data.keyData.carbohydrateCount);
+      setLipides(userResponse.data.data.keyData.lipidCount);
+    } catch(err) {
+      console.log(err)
+    }
+  }
 
   useEffect(() => {
-    axios.get('http://localhost:3000/user/12').then((response) => {
-      setPost(response.data.data);
-      
-    });
-  }, []);
-
-  
-  if (!post) return null;
+   afficheData()
+  }, [])
 
     return (
       <div>
-        <p>{post.keyData.calorieCount}calories</p>
-        <p>{post.keyData.proteinCount}proteines</p>
-        <p>{post.keyData.carbohydrateCount}glucides</p>
-        <p>{post.keyData.lipidCount}lipides</p>
+        <p>{calorie} Calories</p>
+        <p>{protein} Proteines</p>
+        <p>{glucides} Glucides</p>
+        <p>{lipides} Lipides</p>
       </div>
     );
   }

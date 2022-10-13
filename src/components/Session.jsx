@@ -1,29 +1,43 @@
 import React, {useEffect, useState} from 'react';
-import axios from 'axios';
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Legend, Tooltip } from 'recharts';
-
+import { LineChart, Line, XAxis, Legend, Tooltip } from 'recharts';
+import "../styles/lineChart.css"
+import  {getSessions}  from "../utils/fetchData"
 
 
 export default function Session() {
+  const [post, setPost] = useState(null);
 
-      const [post, setPost] = useState(null);
+  async function afficheData () {
+    try{
+      const userResponse = await getSessions();
+      console.log(userResponse.data.data.sessions)
+      setPost(userResponse.data.data.sessions);
+    } catch(err) {
+      console.log(err)
+    }
+  }
 
-      useEffect(() => {
-        axios.get('http://localhost:3000/user/12/average-sessions').then((response) => {
-          setPost(response.data.data.sessions);
-          console.log(response.data.data.sessions)
-        });
-      }, []);
+  useEffect(() => {
+   afficheData()
+  }, [])
 
+      const CustomTooltip = ({ active, payload }) => {
+        if (active && payload && payload.length) {
+          return (
+            <div className="custom-tooltip">                  
+                <p>{`${payload[0].value}`} min</p>
+            </div>
+          );
+        }
+        return null;
+      };
 
   return (
-	<LineChart width={900} height={600} data={post} >
-		<CartesianGrid strokeDasharray="3 3" />
-		<XAxis dataKey="day" interval="preserveEnd" />
-		<YAxis interval="preserveEnd" />
-        <Tooltip />
+	<LineChart className="lineChart" width={900} height={600} data={post}>
+		<XAxis stroke='white' dataKey="day"/>
+        <Tooltip content={<CustomTooltip />} />
 		<Legend />
-		<Line type="monotone" dataKey="sessionLength" stroke="#8884d8" activeDot={{ r: 8 }} />
+		<Line type="monotone" dataKey="sessionLength" stroke="white" activeDot={{ r: 8 }} />
 	</LineChart>
   );
 }

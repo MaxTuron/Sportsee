@@ -1,22 +1,26 @@
-import React, {useState, useEffect} from "react";
-import axios from "axios";
+import React, {useEffect, useState} from "react";
+import  {getUser}  from "../utils/fetchData"
 
 export default function AccueilCompo() {
 
-  const [post, setPost] = useState(null);
+  const [name, setName] = useState(null);
+
+  async function afficheData () {
+    try{
+      const userResponse = await getUser();
+      setName(userResponse.data.data.userInfos.firstName);
+    } catch(err) {
+      console.log(err)
+    }
+  }
 
   useEffect(() => {
-    axios.get('http://localhost:3000/user/12').then((response) => {
-      setPost(response.data.data);
-    });
-  }, []);
-
-  
-  if (!post) return null;
+   afficheData()
+  }, [])
 
     return (
       <div className="header">
-        <p>Bonjour, {post.userInfos.firstName}</p>
+        <p>Bonjour, {name}</p>
       </div>
     );
   }
