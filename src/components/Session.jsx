@@ -1,17 +1,21 @@
 import React, {useEffect, useState} from 'react';
+import {useParams} from 'react-router-dom';
 import { LineChart, Line, XAxis, Legend, Tooltip } from 'recharts';
 import "../styles/lineChart.css"
 import  {getSessions}  from "../utils/fetchData"
 
 
 export default function Session() {
-  const [post, setPost] = useState(null);
+
+  const { userId } = useParams();
+  
+  const [sessions, setSessions] = useState(null);
 
   async function afficheData () {
     try{
-      const userResponse = await getSessions();
-      console.log(userResponse.data.data.sessions)
-      setPost(userResponse.data.data.sessions);
+      const userResponse = await getSessions(userId);
+      console.log(userResponse)
+      setSessions(userResponse.sessions);
     } catch(err) {
       console.log(err)
     }
@@ -33,7 +37,7 @@ export default function Session() {
       };
 
   return (
-	<LineChart className="lineChart" width={900} height={600} data={post}>
+	<LineChart className="lineChart" width={900} height={600} data={sessions}>
 		<XAxis stroke='white' dataKey="day"/>
         <Tooltip content={<CustomTooltip />} />
 		<Legend />

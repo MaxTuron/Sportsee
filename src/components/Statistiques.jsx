@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import {useParams} from 'react-router-dom';
 import  {getStatistiques}  from "../utils/fetchData"
 import {
   BarChart,
@@ -10,17 +11,17 @@ import {
   Legend
 } from "recharts";
 
-
-
 export default function Statistiques() {
+
+  const { userId } = useParams();
 
   const [post, setPost] = useState(null);
 
   async function afficheData () {
     try{
-      const userResponse = await getStatistiques();
-      console.log(userResponse.data.data.sessions)
-      setPost(userResponse.data.data.sessions);
+      const userResponse = await getStatistiques(userId);
+      console.log(userResponse)
+      setPost(userResponse.sessions);
     } catch(err) {
       console.log(err)
     }
@@ -29,6 +30,7 @@ export default function Statistiques() {
   useEffect(() => {
    afficheData()
   }, [])
+
   return (
     <BarChart
       width={700}

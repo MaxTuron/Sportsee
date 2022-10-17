@@ -1,14 +1,17 @@
 import React, {useEffect, useState} from "react";
-import  {getUser}  from "../utils/fetchData"
+import {useParams} from 'react-router-dom';
+import  {getName}  from "../utils/fetchData"
 
 export default function AccueilCompo() {
+
+  const { userId } = useParams();
 
   const [name, setName] = useState(null);
 
   async function afficheData () {
     try{
-      const userResponse = await getUser();
-      setName(userResponse.data.data.userInfos.firstName);
+      const userResponse = await getName(userId);
+      setName(userResponse.name);
     } catch(err) {
       console.log(err)
     }
@@ -16,7 +19,7 @@ export default function AccueilCompo() {
 
   useEffect(() => {
    afficheData()
-  }, [])
+  })
 
     return (
       <div className="header">

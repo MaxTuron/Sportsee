@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from "react";
-import  {getUser}  from "../utils/fetchData"
+import {useParams} from 'react-router-dom';
+import  {getDepenses}  from "../utils/fetchData"
 
 export default function Depenses() {
+  const { userId } = useParams();
 
   const [calorie, setCalorie] = useState(null);
   const [protein, setProtein] = useState(null);
@@ -10,11 +12,11 @@ export default function Depenses() {
 
   async function afficheData () {
     try{
-      const userResponse = await getUser();
-      setCalorie(userResponse.data.data.keyData.calorieCount);
-      setProtein(userResponse.data.data.keyData.proteinCount);
-      setGlucides(userResponse.data.data.keyData.carbohydrateCount);
-      setLipides(userResponse.data.data.keyData.lipidCount);
+      const userResponse = await getDepenses(userId);
+      setCalorie(userResponse.calories);
+      setProtein(userResponse.proteines);
+      setGlucides(userResponse.glucides);
+      setLipides(userResponse.lipides);
     } catch(err) {
       console.log(err)
     }
@@ -22,7 +24,7 @@ export default function Depenses() {
 
   useEffect(() => {
    afficheData()
-  }, [])
+  })
 
     return (
       <div>
