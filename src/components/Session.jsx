@@ -14,7 +14,6 @@ export default function Session() {
   async function afficheData () {
     try{
       const userResponse = await getSessions(userId);
-      console.log(userResponse)
       setSessions(userResponse.sessions);
     } catch(err) {
       console.log(err)

@@ -20,7 +20,6 @@ export default function Statistiques() {
   async function afficheData () {
     try{
       const userResponse = await getStatistiques(userId);
-      console.log(userResponse)
       setPost(userResponse.sessions);
     } catch(err) {
       console.log(err)

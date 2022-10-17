@@ -1,12 +1,16 @@
 import React, {useEffect, useState} from "react";
 import {useParams} from 'react-router-dom';
 import  {getDepenses}  from "../utils/fetchData"
+import CalorieIcon from "../assets/calories-icon.png"
+import ProteineIcon from "../assets/protein-icon.png"
+import GlucideIcon from "../assets/fat-icon.png"
+import LipideIcon from "../assets/carbs-icon.png"
 
 export default function Depenses() {
   const { userId } = useParams();
 
   const [calorie, setCalorie] = useState(null);
-  const [protein, setProtein] = useState(null);
+  const [proteines, setProtein] = useState(null);
   const [glucides, setGlucides] = useState(null);
   const [lipides, setLipides] = useState(null);
 
@@ -27,11 +31,27 @@ export default function Depenses() {
   })
 
     return (
-      <div>
-        <p>{calorie} Calories</p>
-        <p>{protein} Proteines</p>
-        <p>{glucides} Glucides</p>
-        <p>{lipides} Lipides</p>
+      <div className="depenses">
+        <div className="categ">
+          <img src={CalorieIcon} alt="Icone Calories"></img>
+          <p>{calorie}kCal</p>
+          <p>Calories</p>
+        </div>
+        <div className="categ">
+          <img src={ProteineIcon} alt="Icone Proteines"></img>
+          <p>{proteines}g</p>
+          <p>Proteines</p>
+        </div>
+        <div className="categ">
+          <img src={LipideIcon} alt="Icone Lipides"></img>
+          <p>{lipides}g</p>
+          <p>Lipides</p>
+        </div>
+        <div className="categ">
+          <img src={GlucideIcon} alt="Icone Glucides"></img>
+          <p>{glucides}g</p>
+          <p>Glucides</p>
+        </div>
       </div>
     );
   }

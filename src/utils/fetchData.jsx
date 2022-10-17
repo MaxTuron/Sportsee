@@ -27,6 +27,15 @@ async function getDepenses(userId) {
   };  
 }
 
+async function getUserScore(userId) {
+  const response = await getUser.get(`/${userId}`);
+  let userScoreValue = response.data.data.score ? response.data.data.score : response.data.data.todayScore
+  userScoreValue = userScoreValue*100;
+  return {
+    userScore : userScoreValue
+  };  
+}
+
 async function getSessions(userId) {
   const response = await getUser.get(`/${userId}/average-sessions`);
   return {
@@ -43,10 +52,22 @@ async function getSessions(userId) {
   };  
 }
 
+async function getIntensite(userId) {
+  const response = await getUser.get(`/${userId}/performance `);
+
+  return {
+    userId,
+    kind: response.data.data.kind,
+    data : response.data.data.data
+  };  
+}
+
 export {
     getUser,
     getName,
     getDepenses,
     getSessions,
-    getStatistiques
+    getStatistiques,
+    getIntensite,
+    getUserScore
 } 

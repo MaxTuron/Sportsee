@@ -1,12 +1,14 @@
 import React, {useEffect, useState} from "react";
 import {useParams} from 'react-router-dom';
 import  {getName}  from "../utils/fetchData"
+import "../styles/presentation.css"
 
 export default function AccueilCompo() {
 
   const { userId } = useParams();
 
   const [name, setName] = useState(null);
+  
 
   async function afficheData () {
     try{
@@ -21,9 +23,11 @@ export default function AccueilCompo() {
    afficheData()
   })
 
+  console.log(name)
     return (
-      <div className="header">
-        <p>Bonjour, {name}</p>
+      <div className="presentation">
+        <p className="text">Bonjour, <span className="name">{name}</span> <br />
+        Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       </div>
     );
   }

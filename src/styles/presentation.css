@@ -1,0 +1,14 @@
+.presentation {
+    display: flex;
+    flex-direction: row;
+}
+
+.name{
+    color: red;
+}
+.text{
+    color: black;
+}
+.message{
+    white-space: pre-line;
+}
