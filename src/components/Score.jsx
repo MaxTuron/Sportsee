@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
-import { RadialBarChart, RadialBar, Legend, PolarAngleAxis } from "recharts";
+import { RadialBarChart, RadialBar, PolarAngleAxis } from "recharts";
 import "../styles/lineChart.css"
 import  {getUserScore}  from "../utils/fetchData"
 
@@ -9,13 +9,12 @@ export default function Session() {
 
   const { userId } = useParams();
   
-  const [userScore, setUserscore] = useState(null);
+  const [score, setScore] = useState([]);
 
   async function afficheData () {
     try{
       const userResponse = await getUserScore(userId);
-      console.log(userResponse)
-      setUserscore(userResponse);
+      setScore([{value : userResponse.userScore}])
     } catch(err) {
       console.log(err)
     }
@@ -26,6 +25,7 @@ export default function Session() {
   }, [])
 
 
+console.log(score)
   return (
     <RadialBarChart
     width={500}
@@ -34,17 +34,18 @@ export default function Session() {
     cy={150}
     innerRadius={20}
     outerRadius={140}
-    barSize={10}
-    data={userScore}
+    barSize={50}
+    data={score}
   >
     <PolarAngleAxis 
-        type="number" 
-        domain={[0, 100]} 
-    />
+      type="number" 
+      domain={[0, 100]} 
+ />
+
     <RadialBar
       label={{ position: "insideStart", fill: "#fff" }}
       background
-      dataKey="userScore"
+      dataKey="value"
     />
   </RadialBarChart>
   );
