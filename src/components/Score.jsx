@@ -23,30 +23,33 @@ export default function Session() {
   useEffect(() => {
    afficheData()
   }, [])
-
-
-console.log(score)
+ 
   return (
-    <RadialBarChart
-    width={500}
-    height={300}
-    cx={150}
-    cy={150}
-    innerRadius={20}
-    outerRadius={140}
-    barSize={50}
-    data={score}
+<RadialBarChart
+  width={500}
+  height={300}
+  cx={150}
+  cy={150}
+  innerRadius={90}
+  barSize={20}
+  data={score}
+  startAngle={90}
+  endAngle={450}
   >
-    <PolarAngleAxis 
-      type="number" 
-      domain={[0, 100]} 
- />
+  <PolarAngleAxis
+  type="number"
+  domain={[0, 100]}
+  tick={false}
+  />
+  <RadialBar
+  label={{ position:"middle", fill: "#fff" }}
+  background
+  clockWise
+  dataKey="value"
+  cornerRadius={15}
+  fill="red"
+  />
 
-    <RadialBar
-      label={{ position: "insideStart", fill: "#fff" }}
-      background
-      dataKey="value"
-    />
-  </RadialBarChart>
+</RadialBarChart>
   );
 }
