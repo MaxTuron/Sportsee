@@ -9,14 +9,30 @@ export default function Session() {
   const { userId } = useParams();
   
   const [data, setData] = useState([]);
-  const [kind, setKind] = useState(null);
 
   async function afficheData () {
     try{
-      const userResponse = await getIntensite(userId);
-      console.log(userResponse)
-      setData({stats : userResponse.data})
-      setKind(userResponse.kind)
+        const userResponse = await getIntensite(userId);
+        setData({stats : userResponse.data})
+        const array = userResponse.data
+        const objKind = userResponse.kind
+        array.forEach(session => {
+            if(session.kind === 1){
+                session.kind = objKind[1]
+            } else if (session.kind === 2){
+                session.kind = objKind[2]
+            } else if (session.kind === 3){
+                session.kind = objKind[3]
+            } else if (session.kind === 4){
+                session.kind = objKind[4]
+            } else if (session.kind === 5){
+                session.kind = objKind[5]
+            } else if (session.kind === 6){
+                session.kind = objKind[6]
+            }
+        });
+
+
     } catch(err) {
       console.log(err)
     }
@@ -26,8 +42,6 @@ export default function Session() {
    afficheData()
   }, [])
 
-console.log(data.stats)
-console.log(kind)
   return (
     <RadarChart
       cx={300}
