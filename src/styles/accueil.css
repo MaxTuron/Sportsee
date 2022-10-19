@@ -2,3 +2,23 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.bandeau {
+    display: flex;
+    flex-direction: row;
+}
+
+.donnees {
+    width: 80%;
+}
+
+.statistiques {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.graphiques {
+    display: flex;
+    flex-direction: row;
+}

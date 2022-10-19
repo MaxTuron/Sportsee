@@ -23,7 +23,6 @@ export default function AccueilCompo() {
    afficheData()
   })
 
-  console.log(name)
     return (
       <div className="presentation">
         <p className="text">Bonjour, <span className="name">{name}</span> <br />

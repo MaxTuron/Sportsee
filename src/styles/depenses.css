@@ -1,0 +1,6 @@
+.categ {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 15px;
+    align-items: center;
+}

@@ -57,8 +57,8 @@ async function getIntensite(userId) {
 
   return {
     userId,
-    kind: response.data.data.kind,
-    data : response.data.data.data
+    data : response.data.data.data,
+    kind : response.data.data.kind
   };  
 }
 

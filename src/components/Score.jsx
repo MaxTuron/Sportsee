@@ -25,29 +25,31 @@ export default function Session() {
   }, [])
  
   return (
-<RadialBarChart
-  width={500}
-  height={300}
-  cx={150}
-  cy={150}
-  innerRadius={90}
-  barSize={20}
-  data={score}
-  startAngle={90}
-  endAngle={450}
+  <RadialBarChart
+    width={500}
+    height={300}
+    cx={150}
+    cy={150}
+    innerRadius={90}
+    barSize={20}
+    data={score}
+    startAngle={90}
+    endAngle={450}
   >
+
   <PolarAngleAxis
-  type="number"
-  domain={[0, 100]}
-  tick={false}
+    type="number"
+    domain={[0, 100]}
+    tick={false}
   />
+
   <RadialBar
-  label={{ position:"middle", fill: "#fff" }}
-  background
-  clockWise
-  dataKey="value"
-  cornerRadius={15}
-  fill="red"
+    label={{ position:"middle", fill: "#fff" }}
+    background
+    clockWise
+    dataKey="value"
+    cornerRadius={15}
+    fill="red"
   />
 
 </RadialBarChart>

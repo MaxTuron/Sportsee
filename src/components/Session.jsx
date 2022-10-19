@@ -36,7 +36,7 @@ export default function Session() {
       };
 
   return (
-	<LineChart className="lineChart" width={900} height={600} data={sessions}>
+	<LineChart className="lineChart" width={500} height={300} data={sessions}>
 		<XAxis stroke='white' dataKey="day"/>
         <Tooltip content={<CustomTooltip />} />
 		<Legend />

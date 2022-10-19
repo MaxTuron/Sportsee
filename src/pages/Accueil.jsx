@@ -5,6 +5,7 @@ import Depenses from "../components/Depenses"
 import Statistiques from "../components/Statistiques"
 import Session from "../components/Session"
 import Score from "../components/Score"
+import Intensite from "../components/Intensité"
 import "../styles/accueil.css"
 
 export default function Accueil() {
@@ -13,14 +14,22 @@ export default function Accueil() {
       <header>
         <Header />
       </header>
-      <div>
-        <AccueilCompo />
+      <div className="bandeau">
         <Sidebar />
-        <Depenses />
-        <Statistiques />
+        <div className="donnees">
+        <AccueilCompo />
+          <div className="statistiques">
+            <Statistiques />
+            <Depenses />
+          </div>
+          <div className="graphiques">
+            <Session />
+            <Score />
+            <Intensite />
+          </div>
+        </div>
       </div>
-      <Session />
-      <Score />
+
     </div>
   );
 }
