@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts';
-import "../styles/lineChart.css"
+import "../styles/radarChart.css"
 import  {getIntensite}  from "../utils/fetchData"
-
 
 export default function Session() {
   const { userId } = useParams();
@@ -13,25 +12,29 @@ export default function Session() {
   async function afficheData () {
     try{
         const userResponse = await getIntensite(userId);
-        setData({stats : userResponse.data})
-        const array = userResponse.data
-        const objKind = userResponse.kind
-        array.forEach(session => {
-            if(session.kind === 1){
-                session.kind = objKind[1]
-            } else if (session.kind === 2){
-                session.kind = objKind[2]
-            } else if (session.kind === 3){
-                session.kind = objKind[3]
-            } else if (session.kind === 4){
-                session.kind = objKind[4]
-            } else if (session.kind === 5){
-                session.kind = objKind[5]
-            } else if (session.kind === 6){
-                session.kind = objKind[6]
-            }
-        });
 
+        setData({stats : userResponse.data})
+
+        const arraySessions = userResponse.data
+        const objKind = userResponse.kind
+
+        //Transformation des kind numériques en chaine de caractéres
+        arraySessions.forEach(session => {
+          if(objKind[session.kind]==="cardio"){
+            objKind[session.kind] = "Cardio"
+          } else if(objKind[session.kind]==="speed"){
+            objKind[session.kind] = "Vitesse"
+          } else if(objKind[session.kind]==="energy"){
+            objKind[session.kind] = "Energie"
+          } else if(objKind[session.kind]==="endurance"){
+            objKind[session.kind] = "Endurance"
+          } else if(objKind[session.kind]==="strength"){
+            objKind[session.kind] = "Force"
+          } else if(objKind[session.kind]==="intensity"){
+            objKind[session.kind] = "Intensité"
+          }
+          session.kind = objKind[session.kind]
+        });
 
     } catch(err) {
       console.log(err)
@@ -43,23 +46,23 @@ export default function Session() {
   }, [])
 
   return (
-    <RadarChart
-      cx={300}
-      cy={250}
+    <RadarChart className='radarChart'
       outerRadius={150}
-      width={500}
-      height={500}
+      width={450}
+      height={350}
       data={data.stats}
     >
+
       <PolarGrid />
-      <PolarAngleAxis dataKey="kind" />
-      
+      <PolarAngleAxis tick={{fill : 'white'}} dataKey="kind"/>
+
       <Radar
         dataKey="value"
-        stroke="#8884d8"
-        fill="#8884d8"
-        fillOpacity={0.6}
+        stroke="red"
+        fill="red"
+        fillOpacity={0.8}
       />
+      
     </RadarChart>
   );
 }

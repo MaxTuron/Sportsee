@@ -5,7 +5,6 @@ const getUser = axios.create({
   headers: {
     Accept: 'application/json'
   }
-
 });
 
 async function getName(userId) {
@@ -54,7 +53,6 @@ async function getSessions(userId) {
 
 async function getIntensite(userId) {
   const response = await getUser.get(`/${userId}/performance `);
-
   return {
     userId,
     data : response.data.data.data,

@@ -1,14 +1,17 @@
+import React, {useState} from "react";
 import Header from "../components/Header"
 import Sidebar from "../components/Sidebar";
-import AccueilCompo from "../components/Presentation"
+import Presentation from "../components/Presentation"
 import Depenses from "../components/Depenses"
-import Statistiques from "../components/Statistiques"
+import BarChart from "../components/BarChart"
 import Session from "../components/Session"
 import Score from "../components/Score"
 import Intensite from "../components/Intensité"
 import "../styles/accueil.css"
 
 export default function Accueil() {
+
+
   return (
     <div>
       <header>
@@ -17,15 +20,15 @@ export default function Accueil() {
       <div className="bandeau">
         <Sidebar />
         <div className="donnees">
-        <AccueilCompo />
+        <Presentation />
           <div className="statistiques">
-            <Statistiques />
+            <BarChart />
             <Depenses />
           </div>
           <div className="graphiques">
             <Session />
-            <Score />
             <Intensite />
+            <Score />
           </div>
         </div>
       </div>

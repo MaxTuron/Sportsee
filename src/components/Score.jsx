@@ -26,8 +26,8 @@ export default function Session() {
  
   return (
   <RadialBarChart
-    width={500}
-    height={300}
+    width={450}
+    height={350}
     cx={150}
     cy={150}
     innerRadius={90}
@@ -44,7 +44,7 @@ export default function Session() {
   />
 
   <RadialBar
-    label={{ position:"middle", fill: "#fff" }}
+    label={{ position: "inside", fill: "#fff" }}
     background
     clockWise
     dataKey="value"

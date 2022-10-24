@@ -36,11 +36,11 @@ export default function Session() {
       };
 
   return (
-	<LineChart className="lineChart" width={500} height={300} data={sessions}>
+	<LineChart className="lineChart" width={450} height={350} data={sessions}>
 		<XAxis stroke='white' dataKey="day"/>
         <Tooltip content={<CustomTooltip />} />
 		<Legend />
-		<Line type="monotone" dataKey="sessionLength" stroke="white" activeDot={{ r: 8 }} />
+		<Line type="monotone" name='Durée moyenne des sessions' dataKey="sessionLength" stroke="white" activeDot={{ r: 8 }} />
 	</LineChart>
   );
 }

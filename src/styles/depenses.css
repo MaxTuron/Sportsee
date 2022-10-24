@@ -1,6 +1,13 @@
+.depenses {
+    height: 450px;
+}
 .categ {
     display: flex;
     flex-direction: row;
-    padding-bottom: 15px;
+    margin-bottom: 15px;
     align-items: center;
+    background-color: #FBFBFB;
+}
+img{
+    height: 100px;
 }

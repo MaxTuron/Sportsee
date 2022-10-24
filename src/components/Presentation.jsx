@@ -3,17 +3,17 @@ import {useParams} from 'react-router-dom';
 import  {getName}  from "../utils/fetchData"
 import "../styles/presentation.css"
 
-export default function AccueilCompo() {
+export default function Presentation() {
 
   const { userId } = useParams();
 
   const [name, setName] = useState(null);
-  
 
   async function afficheData () {
     try{
       const userResponse = await getName(userId);
       setName(userResponse.name);
+
     } catch(err) {
       console.log(err)
     }
@@ -21,7 +21,7 @@ export default function AccueilCompo() {
 
   useEffect(() => {
    afficheData()
-  })
+  },[])
 
     return (
       <div className="presentation">
@@ -29,4 +29,5 @@ export default function AccueilCompo() {
         Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       </div>
     );
+
   }
