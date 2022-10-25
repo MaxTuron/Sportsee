@@ -1,12 +1,12 @@
-import React, {useState} from "react";
+import React from "react";
 import Header from "../components/Header"
 import Sidebar from "../components/Sidebar";
 import Presentation from "../components/Presentation"
 import Depenses from "../components/Depenses"
 import BarChart from "../components/BarChart"
-import Session from "../components/Session"
-import Score from "../components/Score"
-import Intensite from "../components/Intensité"
+import LineCharts from "../components/LineCharts"
+import RadialBarCharts from "../components/RadialBarCharts"
+import RadarCharts from "../components/RadarCharts"
 import "../styles/accueil.css"
 
 export default function Accueil() {
@@ -18,21 +18,20 @@ export default function Accueil() {
         <Header />
       </header>
       <div className="bandeau">
-        <Sidebar />
+      <aside className="left-sidebar"><Sidebar /></aside>
         <div className="donnees">
         <Presentation />
           <div className="statistiques">
             <BarChart />
-            <Depenses />
           </div>
           <div className="graphiques">
-            <Session />
-            <Intensite />
-            <Score />
+            <LineCharts />
+            <RadarCharts />
+            <RadialBarCharts />
           </div>
         </div>
+        <aside className="right-sidebar"><Depenses /></aside>
       </div>
-
     </div>
   );
 }

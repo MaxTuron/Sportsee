@@ -25,7 +25,7 @@ export default function Presentation() {
 
     return (
       <div className="presentation">
-        <p className="text">Bonjour, <span className="name">{name}</span> <br />
+        <p className="text"><b>Bonjour</b> <span className="name">{name}</span> <br />
         Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       </div>
     );

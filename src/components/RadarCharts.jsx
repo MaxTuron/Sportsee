@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts';
-import "../styles/radarChart.css"
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
+import "../styles/radarCharts.css"
 import  {getIntensite}  from "../utils/fetchData"
 
-export default function Session() {
+export default function RadarCharts() {
   const { userId } = useParams();
   
   const [data, setData] = useState([]);
@@ -46,23 +46,27 @@ export default function Session() {
   }, [])
 
   return (
-    <RadarChart className='radarChart'
-      outerRadius={150}
-      width={450}
-      height={350}
-      data={data.stats}
-    >
+    <div className='radarChart'>
+      <ResponsiveContainer width="100%" height="100%">
+        <RadarChart 
+          outerRadius={150}
+          width={425}
+          height={350}
+          data={data.stats}
+        >
 
-      <PolarGrid />
-      <PolarAngleAxis tick={{fill : 'white'}} dataKey="kind"/>
+          <PolarGrid />
+          <PolarAngleAxis tick={{fill : 'white'}} dataKey="kind"/>
 
-      <Radar
-        dataKey="value"
-        stroke="red"
-        fill="red"
-        fillOpacity={0.8}
-      />
-      
-    </RadarChart>
+          <Radar
+            dataKey="value"
+            stroke="red"
+            fill="red"
+            fillOpacity={0.8}
+          />
+        </RadarChart>
+      </ResponsiveContainer>
+    </div>
+
   );
 }

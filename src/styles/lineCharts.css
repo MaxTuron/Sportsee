@@ -1,4 +1,7 @@
 .lineChart {
     background-color: red;
     border-radius: 15px;
+    margin-left: 8vh;
+    height: 350px;
+    width: 425px;
 }

@@ -8,7 +8,8 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend
+  Legend,
+  ResponsiveContainer
 } from "recharts";
 import "../styles/barChart.css"
 
@@ -41,23 +42,30 @@ export default function Statistiques() {
   }, [])
 
   return (
-    <BarChart className="barChart"
-      width={1250}
-      height={450}
-      data={post}
-      margin={{
-        top: 5,
-        right: 30,
-        left: 20
-      }}
-    >
-      <CartesianGrid vertical={false} strokeDasharray="3 3" />
-      <XAxis dataKey="day" />
-      <YAxis axisLine={false} orientation="right"/>
-      <Tooltip />
-      <Legend />
-      <Bar dataKey="kilogram" name="Poids (kg)" fill="black" barSize={10} radius={25}/>
-      <Bar dataKey="calories" name="Calories brûlées (kCal)" barSize={10} radius={25}fill="red" />
-    </BarChart>
+    <div className="barChart">
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart        
+          width={1330}
+          height={310}
+          data={post}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20
+          }}
+        >
+          <text x={250} y={20} fill="black" textAnchor="end" >
+                <tspan fontSize="20">Activité quotidienne</tspan>
+            </text>
+          <CartesianGrid vertical={false} strokeDasharray="3 3" />
+          <XAxis dataKey="day" />
+          <YAxis axisLine={false} orientation="right"/>
+          <Tooltip />
+          <Legend wrapperStyle={{width:1100,whiteSpace:"break-spaces"}} iconType="circle" layout="horizontal" verticalAlign="top" align="end"/>
+          <Bar dataKey="kilogram" name="Poids (kg)" fill="black" barSize={10} radius={25}/>
+          <Bar dataKey="calories" name="Calories brûlées (kCal)" barSize={10} radius={25} fill="red" />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
   );
 }
