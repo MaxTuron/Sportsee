@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
-import { RadialBarChart, RadialBar, PolarAngleAxis,ResponsiveContainer } from "recharts";
+import { RadialBarChart, RadialBar, Legend, PolarAngleAxis,ResponsiveContainer } from "recharts";
 import "../styles/radialBarChart.css"
 import  {getUserScore}  from "../utils/fetchData"
 
@@ -23,7 +23,20 @@ export default function Session() {
   useEffect(() => {
    afficheData()
   }, [])
- 
+
+  const renderLegend = (props) => {
+    const { payload } = props;
+    return (
+      <div>
+        {
+          payload.map((score, index) => (
+            <p> <b>{score.value}%</b> <span><br></br>de votre <br></br>objectif</span> </p>
+          ))
+        }
+      </div>
+    );
+  }
+
   return (
     <div className='radialBarChart'>
       <ResponsiveContainer width="100%" height="100%">
@@ -47,14 +60,13 @@ export default function Session() {
         />
 
         <RadialBar
-          label={{ position: "inside", fill: "#fff" }}
           background
           clockWise
           dataKey="value"
           cornerRadius={15}
           fill="red"
         />
-
+        <Legend iconSize={0} payload={score} layout="vertical" verticalAlign='middle' align='center' content={renderLegend} />
         </RadialBarChart>
       </ResponsiveContainer>
     </div>

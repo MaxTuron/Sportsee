@@ -1,15 +1,9 @@
 .depenses {
-    padding-top: 112px;
-    margin-right: 2vh;
+   
 }
 .categ {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 15px;
-    align-items: center;
+
     background-color: #FBFBFB;
-    padding: 2.5vh;
-    border-radius: 15px;
 }
 
 .categ img{

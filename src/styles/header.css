@@ -3,17 +3,21 @@
     flex-direction: row;
     color: white;
     background-color: black;
+    width: 100%;
 }
 
 .nav{
+    width: 95%;
     display: flex;
+    justify-content: space-between;
     align-self: center;
 }
 
 .headerTitle {
+    font-size: x-large;
     padding: 0 15px 0 15px;
 }
 
 .logo {
-    width: 15%;
+    width: 13%;
 }

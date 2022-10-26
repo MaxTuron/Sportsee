@@ -17,21 +17,28 @@ export default function Accueil() {
       <header>
         <Header />
       </header>
-      <div className="bandeau">
-      <aside className="left-sidebar"><Sidebar /></aside>
-        <div className="donnees">
-        <Presentation />
-          <div className="statistiques">
-            <BarChart />
-          </div>
-          <div className="graphiques">
-            <LineCharts />
-            <RadarCharts />
-            <RadialBarCharts />
-          </div>
+      
+      <div className="allPage">
+
+        <aside className="leftBar"><Sidebar/></aside>
+
+        <div className="mainContent">
+            <div className="intro">
+              <Presentation />
+            </div>
+            <div className="barCharts">
+              <BarChart />
+            </div>
+            <div className="otherCharts">
+              <LineCharts />
+              <RadarCharts />
+              <RadialBarCharts />
+            </div>
         </div>
-        <aside className="right-sidebar"><Depenses /></aside>
+
+        <aside className="rightBar"><Depenses /></aside>
       </div>
-    </div>
+
+    </div> 
   );
 }

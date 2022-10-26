@@ -6,28 +6,35 @@ body {
     sans-serif;
 }
 
-.bandeau {
+header{
+    width: 100%;
+}
+
+.allPage {
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
-
-.statistiques {
+.mainContent {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    width: 80%;
 }
 
-.graphiques {
+.otherCharts {
     display: flex;
-    flex-direction: row;
+    width: 80%;
+    margin: 2vh 0 5vh 5vh;
 }
 
-.left-sidebar {
+.leftBar {
     display: flex;
+    width: 10%;
 }
 
-.right-sidebar {
+.rightBar {
     display: flex;
+    width: 20%;
+    height: 100%;
 }
-

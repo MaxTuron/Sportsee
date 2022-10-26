@@ -1,7 +1,6 @@
 .lineChart {
-    background-color: red;
-    border-radius: 15px;
-    margin-left: 8vh;
     height: 350px;
-    width: 425px;
+    width: 30%;
+    border-radius: 15px;
+    background-color: red;
 }

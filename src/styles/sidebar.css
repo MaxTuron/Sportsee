@@ -3,17 +3,21 @@
     flex-direction: column;
     color: white;
     background-color: black;
-    width: fit-content;
-    padding-top: 170px;
     align-items: center;
 }
 
+.icons {
+    padding-top: 17vh;
+}
+
 .logoSidebar {
-    width: 64px;
-    height: 64px;
-    padding: 15px 0 15px 0;
+    display: flex;
+    padding: 12px;
 }
 
 .copyright {
-    
+    display: flex;
+    position: absolute;
+    top: 745px;
+    rotate: 270deg;
 }

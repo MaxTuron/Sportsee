@@ -1,7 +1,7 @@
 .radarChart {
+    height: 350px;
+    width: 40%;
     border-radius: 15px;
     background-color: black;
-    margin-left: 3vh;
-    height: 350px;
-    width: 425px;
+    margin: 0 5vh 0 5vh;
 }

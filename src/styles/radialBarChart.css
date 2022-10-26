@@ -1,8 +1,6 @@
 .radialBarChart {
     height: 350px;
-    width: 425px;
+    width: 30%;
     border-radius: 15px;
     background-color: #FBFBFB;
-    margin-left: 3vh;
-    margin-right: 3vh;
 }

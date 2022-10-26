@@ -1,7 +1,7 @@
 .barChart {
     height: 310px ;
-    width: 1000%;
+    width: 90%;
     background-color: #FBFBFB ;
     border-radius: 15px;
-    margin: 2vh 0 5vh 10vh;
+    margin: 2vh 0 5vh 5vh;
 }
