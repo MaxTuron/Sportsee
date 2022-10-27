@@ -1,11 +1,38 @@
 .depenses {
-   
+    margin-top: 12.5vh;
+    width: 100%;
 }
+
 .categ {
-
+    display: flex;
+    flex-direction: row;
     background-color: #FBFBFB;
+    align-items: center;
+    border-radius: 15px;
+    margin-bottom: 10vh;
 }
 
-.categ img{
-    padding-right: 15px;
+.lastCateg {
+    display: flex;
+    flex-direction: row;
+    background-color: #FBFBFB;
+    align-items: center;
+    border-radius: 15px;
+    margin-bottom: 5.2vh;
+}
+
+.stats {
+    width: 70%;
+    padding-right: 10px;
+    font-size: large;
+}
+
+.categ img, .lastCateg img{
+    width: 30%;
+    height: 70%;
+    padding: 10px;
+}
+
+.bold {
+    font-weight: bold;
 }

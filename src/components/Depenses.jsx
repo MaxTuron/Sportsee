@@ -35,29 +35,29 @@ export default function Depenses() {
       <div className="depenses">
         <div className="categ">
           <img src={CalorieIcon} alt="Icone Calories"></img>
-          <div>
-            <p><b>{calorie}kCal</b></p>
+          <div className="stats">
+            <p className="bold">{calorie}kCal</p>
             <p>Calories</p>
           </div>
         </div>
         <div className="categ">
           <img src={ProteineIcon} alt="Icone Proteines"></img>
-          <div>
-            <p><b>{proteines}g</b></p>
+          <div className="stats">
+            <p className="bold">{proteines}g</p>
             <p>Proteines</p>
           </div>       
         </div>
         <div className="categ">
           <img src={LipideIcon} alt="Icone Lipides"></img>
-          <div>
-            <p><b>{lipides}g</b></p>
+          <div className="stats">
+            <p className="bold">{lipides}g</p>
             <p>Lipides</p>
           </div>
         </div>
-        <div className="categ">
+        <div className="lastCateg">
           <img src={GlucideIcon} alt="Icone Glucides"></img>
-          <div>
-            <p><b>{glucides}g</b></p>
+          <div className="stats">
+            <p className="bold">{glucides}g</p>
             <p>Glucides</p>
           </div>
         </div>

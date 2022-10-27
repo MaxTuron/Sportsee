@@ -12,7 +12,7 @@ export default function Sidebar() {
           <img src={Haltere} alt="Icone Haltere" className="logoSidebar"></img>
           <img src={Natation} alt="Icone Natation" className="logoSidebar"></img>
           <img src={Zen} alt="Icone Zen" className="logoSidebar"></img>
-          <img src={Velo} alt="Icone Velo" className="logoSidebar"></img>
+          <img src={Velo} alt="Icone Velo" className="logoSidebar lastIcon"></img>
         </div>
         <p className="copyright">Copyright, Sportsee 2020</p>
       </div>

@@ -41,15 +41,13 @@ export default function Session() {
     <div className='radialBarChart'>
       <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart
-          width={425}
-          height={350}
-          innerRadius={90}
-          barSize={20}
+          innerRadius={100}
+          barSize={15}
           data={score}
           startAngle={90}
           endAngle={450}
         >
-        <text x={100} y={20} fill="black" textAnchor="end" >
+        <text x={70} y={25} fill="black" textAnchor="end" >
           <tspan fontSize="20">Score</tspan>
         </text>
 
@@ -59,9 +57,7 @@ export default function Session() {
           tick={false}
         />
 
-        <RadialBar
-          background
-          clockWise
+        <RadialBar                  
           dataKey="value"
           cornerRadius={15}
           fill="red"

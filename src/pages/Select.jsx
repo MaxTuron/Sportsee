@@ -1,20 +1,27 @@
 import Header from "../components/Header"
-import Sidebar from "../components/Sidebar";
 import { Link } from "react-router-dom"
-import "../styles/accueil.css"
+import "../styles/select.css"
 
 export default function Accueil() {
 
   return (
     <div>
+      <header>
         <Header />
-        <Sidebar />
-        <Link to={`/12`}>  
-        <p>Ici 12</p>                                                           
-        </Link>
-        <Link to={`/18`}>  
-        <p>Ici 18</p>                                                           
-        </Link>
+      </header>
+
+      <div className="allPage">
+        
+        <div className="redirect">
+          <Link to={`/12`}>  
+            <p className="user">Karl</p>                                                           
+          </Link>
+
+          <Link to={`/18`}>  
+            <p className="user">Cecilia</p>                                                           
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

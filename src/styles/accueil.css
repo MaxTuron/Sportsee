@@ -19,13 +19,11 @@ header{
 .mainContent {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 72%;
 }
 
 .otherCharts {
     display: flex;
-    width: 80%;
-    margin: 2vh 0 5vh 5vh;
 }
 
 .leftBar {
@@ -35,6 +33,6 @@ header{
 
 .rightBar {
     display: flex;
-    width: 20%;
+    width: 15%;
     height: 100%;
 }
