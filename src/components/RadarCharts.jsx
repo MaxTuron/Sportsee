@@ -1,18 +1,23 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useState} from 'react';
-import {useParams} from 'react-router-dom';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import "../styles/radarCharts.css"
 import  {getIntensite}  from "../utils/fetchData"
+import PropTypes from 'prop-types';
 
-export default function RadarCharts() {
-  const { userId } = useParams();
-  
+/**
+ * Component displaying the radar chart.
+ * @Component
+ * @param {number} id 
+ * @returns render
+ */
+export default function RadarCharts(id) {
+  const {userId} = id;
   const [data, setData] = useState([]);
 
   async function afficheData () {
     try{
         const userResponse = await getIntensite(userId);
-
         setData({stats : userResponse.data})
 
         const arraySessions = userResponse.data
@@ -48,25 +53,17 @@ export default function RadarCharts() {
   return (
     <div className='radarChart'>
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart 
-          outerRadius={150}
-          width={425}
-          height={350}
-          data={data.stats}
-        >
-
-          <PolarGrid />
+        <RadarChart outerRadius={120} width={425} height={350} data={data.stats}>
+          <PolarGrid radialLines={false} />
           <PolarAngleAxis tick={{fill : 'white'}} dataKey="kind"/>
-
-          <Radar
-            dataKey="value"
-            stroke="red"
-            fill="red"
-            fillOpacity={0.8}
-          />
+          <Radar dataKey="value" stroke="red" fill="red" fillOpacity={0.8}/>
         </RadarChart>
       </ResponsiveContainer>
     </div>
 
   );
 }
+
+RadarCharts.propTypes = {
+  userId: PropTypes.number.isRequired
+};

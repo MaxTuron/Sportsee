@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from "react";
 import Header from "../components/Header"
 import Sidebar from "../components/Sidebar";
@@ -13,15 +14,16 @@ import {useParams} from 'react-router-dom';
 import "../styles/accueil.css"
 
 export default function Accueil() {
-
   const { userId } = useParams();
 
   const [name, setName] = useState(null);
+  const [id, setId] = useState(null);
 
   async function afficheData () {
     try{
       const userResponse = await getName(userId);
       setName(userResponse.name);
+      setId(parseInt(userId))
     } catch(err) {
       setName(null);
       console.log(err)
@@ -46,28 +48,23 @@ export default function Accueil() {
         <header>
           <Header />
         </header>
-        
         <div className="allPage">
-  
           <aside className="leftBar"><Sidebar/></aside>
-  
           <div className="mainContent">
               <div className="intro">
                 <Presentation name={name}/>
               </div>
               <div className="barCharts">
-                <BarChart />
+                <BarChart userId={id}/>
               </div>
               <div className="otherCharts">
-                <LineCharts />
-                <RadarCharts />
-                <RadialBarCharts />
+                <LineCharts userId={id}/>
+                <RadarCharts userId={id}/>
+                <RadialBarCharts userId={id}/>
               </div>
           </div>
-  
           <aside className="rightBar"><Depenses /></aside>
         </div>
-  
       </div> 
     );
   }

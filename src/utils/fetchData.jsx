@@ -7,14 +7,24 @@ const getUser = axios.create({
   }
 });
 
+/**
+ * Function who get the user name from the "main data" tab of the API.
+ * @param { string } userId 
+ * @returns {object}
+ */
 async function getName(userId) {
   const response = await getUser.get(`/${userId}`);
   return {
     userId,
-    name: response.data.data.userInfos.firstName
-  };  
+    name: response.data.data.userInfos.firstName,
+  };
 }
 
+/**
+ * Function who get the calories, proteines, glucids and lipids from the API and return then as an object with the userID.
+ * @param { string } userId 
+ * @returns {object}
+ */
 async function getDepenses(userId) {
   const response = await getUser.get(`/${userId}`);
   return {
@@ -26,6 +36,11 @@ async function getDepenses(userId) {
   };  
 }
 
+/**
+ * Function who get the user score as a decimal number and convert it into an integer to display it easyly.
+ * @param { string } userId 
+ * @returns {object}
+ */
 async function getUserScore(userId) {
   const response = await getUser.get(`/${userId}`);
   let userScoreValue = response.data.data.score ? response.data.data.score : response.data.data.todayScore
@@ -35,6 +50,11 @@ async function getUserScore(userId) {
   };  
 }
 
+/**
+ * Function who get the user session with the day and the session lenght from the "average session" tab of the API.
+ * @param { string } userId 
+ * @returns {object}
+ */
 async function getSessions(userId) {
   const response = await getUser.get(`/${userId}/average-sessions`);
   return {
@@ -43,6 +63,11 @@ async function getSessions(userId) {
   };  
 }
 
+/**
+ * Function who get the user session with the day, the weight and the calories from the "activity" tab of the API.
+ * @param { string } userId 
+ * @returns {object}
+ */
  async function getStatistiques(userId) {
   const response = await getUser.get(`/${userId}/activity`);
   return {
@@ -51,6 +76,11 @@ async function getSessions(userId) {
   };  
 }
 
+/**
+ * Function who get the user performances with the kind label and the data (value and kind number) from the "performance" tab of the API.
+ * @param { string } userId 
+ * @returns {object}
+ */
 async function getIntensite(userId) {
   const response = await getUser.get(`/${userId}/performance `);
   return {

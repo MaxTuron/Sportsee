@@ -1,8 +1,15 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import "../styles/presentation.css"
 
-export default function Presentation(props) {
-  const {name} = props;
+/**
+ * Component who display the user's name.
+ * @Component
+ * @param {string} propName 
+ * @returns render
+ */
+export default function Presentation(propName) {
+  const {name} = propName;
 
     return (
       <div className="presentation">
@@ -10,5 +17,8 @@ export default function Presentation(props) {
         Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       </div>
     );
-
   }
+
+  Presentation.propTypes = {
+    propName: PropTypes.string
+  };

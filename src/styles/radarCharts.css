@@ -5,3 +5,18 @@
     background-color: black;
     margin: 0 3vh 0 2vh;
 }
+
+@media (max-width: 1570px)
+{
+    .radarChart {
+        width: 40%;
+    }
+}
+
+@media (max-width: 1310px)
+{
+    .radarChart {
+        width: 92%;
+        margin: 0 0 3vh 0;
+    }
+}
