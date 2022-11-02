@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+![logo-du-projet](https://github.com/MaxTuron/Sportsee/blob/master/src/assets/sportseeLogo.png?raw=true)
+# Sportsee
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Projet 12 - Développez un tableau de bord d'analytics avec React
 
-## Available Scripts
+## Dependencies
 
-In the project directory, you can run:
+- [React](https://reactjs.org/) v18.2.0
 
-### `npm start`
+- [recharts](https://recharts.org/en-US) v2.1.4
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [react-router-dom](https://reactrouter.com/web/guides/quick-start) v6.4.2
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [prop-types](https://www.npmjs.com/package/prop-types) v15.8.1
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+- [![npm-v_7.24.1](https://img.shields.io/badge/npm-v_7.24.1-orange)](https://docs.npmjs.com/)
+- [![NodeJs-v_16.10.0](https://img.shields.io/badge/NodeJs-v_16.10.0-red)](https://nodejs.org/en/docs/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Install and run the project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Create a folder on your computer, it will contain the backend and the frontend.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Install and run the Backend
 
-### `npm run eject`
+- Clone the Backend in the project folder
+`https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard.git`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Install the dependencies : yarn install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Launch the Backend API : yarn start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- In the terminal window, you will see the message Magic happens on port 3000.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Install and run the Frontend
 
-## Learn More
+- Clone the Frontend in the project folder
+`https://github.com/MaxTuron/Sportsee.git`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Install the dependencies : npm install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Launch the Frontend : npm start
 
-### Code Splitting
+- In the terminal window, you will see the message : ? something is already running on port 3000. Would you like to run the app on another port instead >> (Y/n)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Type Y
 
-### Analyzing the Bundle Size
+- The app will now run on the port 3001 ( http://localhost:3001/ )
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- For now you can choose between 2 users on the main page (userId 12 and 18).
 
-### Making a Progressive Web App
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Max Turon](https://github.com/MaxTuron)

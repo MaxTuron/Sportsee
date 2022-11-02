@@ -15,7 +15,7 @@ import "../styles/accueil.css"
 
 export default function Accueil() {
   const { userId } = useParams();
-
+  
   const [name, setName] = useState(null);
   const [id, setId] = useState(null);
 

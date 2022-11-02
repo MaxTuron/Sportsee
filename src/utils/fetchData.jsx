@@ -22,7 +22,7 @@ async function getName(userId) {
 
 /**
  * Function who get the calories, proteines, glucids and lipids from the API and return then as an object with the userID.
- * @param { string } userId 
+ * @param { number } userId 
  * @returns {object}
  */
 async function getDepenses(userId) {
@@ -38,7 +38,7 @@ async function getDepenses(userId) {
 
 /**
  * Function who get the user score as a decimal number and convert it into an integer to display it easyly.
- * @param { string } userId 
+ * @param { number } userId 
  * @returns {object}
  */
 async function getUserScore(userId) {
@@ -52,7 +52,7 @@ async function getUserScore(userId) {
 
 /**
  * Function who get the user session with the day and the session lenght from the "average session" tab of the API.
- * @param { string } userId 
+ * @param { number } userId 
  * @returns {object}
  */
 async function getSessions(userId) {
@@ -65,7 +65,7 @@ async function getSessions(userId) {
 
 /**
  * Function who get the user session with the day, the weight and the calories from the "activity" tab of the API.
- * @param { string } userId 
+ * @param { number } userId 
  * @returns {object}
  */
  async function getStatistiques(userId) {
@@ -78,7 +78,7 @@ async function getSessions(userId) {
 
 /**
  * Function who get the user performances with the kind label and the data (value and kind number) from the "performance" tab of the API.
- * @param { string } userId 
+ * @param { number } userId 
  * @returns {object}
  */
 async function getIntensite(userId) {

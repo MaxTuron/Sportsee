@@ -57,7 +57,7 @@ export default function Statistiques(id) {
           <YAxis dataKey='kilogram' tickLine={false} orientation='right' tickCount={4} axisLine={false} domain={['dataMin - 1', 'dataMax + 1']} />
           <YAxis yAxisId='calorie' dataKey='calories' hide />
           <Tooltip content={<CustomTooltip />} />
-          <Legend iconType="circle" layout="horizontal" verticalAlign="top" align="end"/>
+          <Legend wrapperStyle={{ paddingBottom: "25px"}} iconType="circle" layout="horizontal" verticalAlign="top" align="end"/>
           <Bar dataKey="kilogram" name="Poids (kg)" fill="black" barSize={10} radius={25}/>
           <Bar yAxisId='calorie' dataKey="calories" name="Calories brûlées (kCal)" barSize={10} radius={25} fill="red" />
         </BarChart>

@@ -45,8 +45,6 @@ export default function Session(id) {
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
-    console.log(active)
-    console.log(payload)
     return (
       <div className="custom-tooltip">                  
           <p>{`${payload[0].value}`} min</p>
