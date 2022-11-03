@@ -7,12 +7,11 @@ import PropTypes from 'prop-types';
 
 /**
  * Component displaying the line chart.
- * @Component
- * @param {number} id 
+ * @param {number} userId 
  * @returns render
  */
-export default function Session(id) {
-  const {userId} = id;
+export default function Session(props) {
+  const {userId} = props;
   const [sessions, setSessions] = useState(null);
 
   async function afficheData () {
@@ -43,8 +42,8 @@ export default function Session(id) {
   );
 }
 
-const CustomTooltip = ({ active, payload }) => {
-  if (active && payload && payload.length) {
+const CustomTooltip = ({ payload }) => {
+  if (payload.length) {
     return (
       <div className="custom-tooltip">                  
           <p>{`${payload[0].value}`} min</p>

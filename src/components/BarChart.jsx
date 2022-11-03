@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from "react";
 import PropTypes from 'prop-types';
-import  {getStatistiques}  from "../utils/fetchData"
+import {getStatistiques}  from "../utils/fetchData"
 import {
   BarChart,
   Bar,
@@ -16,12 +16,11 @@ import "../styles/barChart.css"
 
 /**
  * Component displaying the bar chart.
- * @Component
- * @param {number} id 
+ * @param {number} userId 
  * @returns render
  */
-export default function Statistiques(id) {
-  const {userId} = id;
+export default function Statistiques(props) {
+  const {userId} = props;
   const [data, setData] = useState(null);
   
   async function afficheData () {
@@ -48,7 +47,7 @@ export default function Statistiques(id) {
   return (
     <div className="barChart">
       <ResponsiveContainer width="100%" height="100%">
-      <BarChart data={data}>
+        <BarChart data={data}>
           <text x={250} y={20} fill="black" textAnchor="end" >
             <tspan fontSize="20">Activité quotidienne</tspan>
           </text>
@@ -66,8 +65,8 @@ export default function Statistiques(id) {
   );
 }
 
-const CustomTooltip = ({ active, payload }) => {
-  if (active && payload && payload.length) {
+const CustomTooltip = ({ payload }) => {
+  if ( payload.length) {
     return (
       <div className="tooltipBarChart">                  
           <p>{`${payload[0].value}`} Kg</p>

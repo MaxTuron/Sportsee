@@ -9,7 +9,7 @@ import LineCharts from "../components/LineCharts"
 import RadialBarCharts from "../components/RadialBarCharts"
 import RadarCharts from "../components/RadarCharts"
 import Error from "../pages/Error"
-import  {getName}  from "../utils/fetchData"
+import {getName}  from "../utils/fetchData"
 import {useParams} from 'react-router-dom';
 import "../styles/accueil.css"
 

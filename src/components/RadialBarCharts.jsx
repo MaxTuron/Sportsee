@@ -7,12 +7,11 @@ import PropTypes from 'prop-types';
 
 /**
  * Component displaying the radial bar chart.
- * @Component
- * @param {number} id 
+ * @param {number} userId 
  * @returns render
  */
-export default function Session(id) {
-  const {userId} = id;
+export default function Session(props) {
+  const {userId} = props;
   const [score, setScore] = useState([]);
   async function afficheData () {
     try{

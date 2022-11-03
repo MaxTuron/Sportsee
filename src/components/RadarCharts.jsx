@@ -7,12 +7,11 @@ import PropTypes from 'prop-types';
 
 /**
  * Component displaying the radar chart.
- * @Component
- * @param {number} id 
+ * @param {number} userId 
  * @returns render
  */
-export default function RadarCharts(id) {
-  const {userId} = id;
+export default function RadarCharts(props) {
+  const {userId} = props;
   const [data, setData] = useState([]);
 
   async function afficheData () {
