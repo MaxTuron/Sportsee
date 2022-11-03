@@ -1,5 +1,4 @@
 ![logo-du-projet](https://github.com/MaxTuron/Sportsee/blob/master/src/assets/sportseeLogo.png?raw=true)
-# Sportsee
 
 Projet 12 - Développez un tableau de bord d'analytics avec React
 
@@ -12,12 +11,6 @@ Projet 12 - Développez un tableau de bord d'analytics avec React
 - [react-router-dom](https://reactrouter.com/web/guides/quick-start) v6.4.2
 
 - [prop-types](https://www.npmjs.com/package/prop-types) v15.8.1
-
-
-### Prerequisites
-
-- [![npm-v_7.24.1](https://img.shields.io/badge/npm-v_7.24.1-orange)](https://docs.npmjs.com/)
-- [![NodeJs-v_16.10.0](https://img.shields.io/badge/NodeJs-v_16.10.0-red)](https://nodejs.org/en/docs/)
 
 ## Install and run the project
 
