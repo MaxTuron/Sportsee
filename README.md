@@ -12,6 +12,8 @@ Projet 12 - Développez un tableau de bord d'analytics avec React
 
 - [prop-types](https://www.npmjs.com/package/prop-types) v15.8.1
 
+- [Node.js](https://nodejs.org/en/) v16.13.2
+
 ## Install and run the project
 
 - Create a folder on your computer, it will contain the backend and the frontend.
@@ -20,6 +22,8 @@ Projet 12 - Développez un tableau de bord d'analytics avec React
 
 - Clone the Backend in the project folder
 `https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard.git`
+
+- Move into the Backend folder : cd P9-front-end-dashboard
 
 - Install the dependencies : yarn install
 
@@ -31,6 +35,8 @@ Projet 12 - Développez un tableau de bord d'analytics avec React
 
 - Clone the Frontend in the project folder
 `https://github.com/MaxTuron/Sportsee.git`
+
+- Move into the Frontend folder : cd Sportsee
 
 - Install the dependencies : npm install
 
