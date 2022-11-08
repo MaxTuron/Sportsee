@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import {useParams} from 'react-router-dom';
 import  {getDepenses}  from "../utils/fetchData"
 import CalorieIcon from "../assets/calories-icon.png"
 import ProteineIcon from "../assets/protein-icon.png"
@@ -7,8 +6,8 @@ import GlucideIcon from "../assets/fat-icon.png"
 import LipideIcon from "../assets/carbs-icon.png"
 import "../styles/depenses.css"
 
-export default function Depenses() {
-  const { userId } = useParams();
+export default function Depenses(props) {
+  const { userId } = props;
 
   const [calorie, setCalorie] = useState(null);
   const [proteines, setProtein] = useState(null);

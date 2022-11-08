@@ -63,7 +63,7 @@ export default function Accueil() {
                 <RadialBarCharts userId={id}/>
               </div>
           </div>
-          <aside className="rightBar"><Depenses /></aside>
+          <aside className="rightBar"><Depenses userId={id} /></aside>
         </div>
       </div> 
     );
